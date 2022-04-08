@@ -1,6 +1,7 @@
-function new_body(name, mass, pos, vel)
+function new_body(name, icon, mass, pos, vel)
     local result = {
         name = name,
+        icon = icon,
         mass = mass, -- mass in kg * 10^11
         pos  = {},   -- position
         vel  = {},   -- velocity
@@ -39,7 +40,7 @@ function new_body(name, mass, pos, vel)
             local xr = xoff + math.floor(self.pos[0] / scale + 0.5)
             local yr = yoff + math.floor(self.pos[1] / scale + 0.5)
 
-            pix(xr, yr, 0xffffff)
+            spr(icon, xr - 4, yr - 4)
         end
     }
 
@@ -55,6 +56,8 @@ function new_body(name, mass, pos, vel)
 end
 
 function init()
+    settransparent(0x000000)
+
     offset = {}
     offset[0] = 0
     offset[1] = 0
@@ -98,6 +101,8 @@ function tick()
 end
 
 function render()
+    clear(0x000000)
+
     local xoff = scr_w / 2 + offset[0]
     local yoff = scr_h / 2 + offset[1]
 
