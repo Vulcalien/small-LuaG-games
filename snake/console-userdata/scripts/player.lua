@@ -47,12 +47,15 @@ player = {
     end,
 
     render = function(self)
-        spr(0, self.head.x * 8, self.head.y * 8, {
-            rot = self.dir
+        spr(6, self.head.x * 8, self.head.y * 8, {
+            rot = 4 - self.dir,
+            col_mod = 0xffffff -- TODO head color
         })
 
         for _,part in ipairs(self.body) do
-            spr(16, part.x * 8, part.y * 8)
+            spr(7, part.x * 8, part.y * 8, {
+                col_mod = 0xffffff --TODO body color
+            })
         end
     end
 }

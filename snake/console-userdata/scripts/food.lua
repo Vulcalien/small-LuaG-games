@@ -20,6 +20,8 @@ food = {
     end,
 
     render = function(self)
-        spr(32, self.x * 8, self.y * 8)
+        spr(22, self.x * 8, self.y * 8, {
+            col_mod = 0xffffff -- TODO food color
+        })
     end
 }
