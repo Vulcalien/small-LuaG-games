@@ -19,13 +19,16 @@ function init()
     settransparent(0xff00ff)
 
     loadscript('player.lua')
+    loadscript('food.lua')
 
     loadscript('panel/start.lua')
     loadscript('panel/credits.lua')
     loadscript('panel/game.lua')
-    --loadscript('panel/pause.lua')
+    loadscript('panel/pause.lua')
 
     current_panel = start_panel
+
+    food:spawn()
 end
 
 function tick()
