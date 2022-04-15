@@ -25,6 +25,7 @@ function init()
     loadscript('panel/credits.lua')
     loadscript('panel/game.lua')
     loadscript('panel/pause.lua')
+    loadscript('panel/gameover.lua')
 
     current_panel = start_panel
 

@@ -31,7 +31,7 @@ player = {
 
         if self.head.x < 0 or self.head.x >= map_w or
            self.head.y < 0 or self.head.y >= map_h then
-            -- TODO game over
+            current_panel = gameover_panel
         end
 
         if self.head.x == food.x and self.head.y == food.y then
