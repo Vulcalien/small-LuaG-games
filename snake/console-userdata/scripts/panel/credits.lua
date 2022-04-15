@@ -7,6 +7,7 @@ credits_panel = {
             end
         end
     end,
+
     render = function(self)
         clear(0x004400)
         for i=0,1 do

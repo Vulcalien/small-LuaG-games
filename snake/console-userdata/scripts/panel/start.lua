@@ -9,6 +9,7 @@ start_panel = {
             current_panel = credits_panel
         end
     end,
+
     render = function(self)
         local color_boost = math.abs(math.sin(ticks / 120))
 
@@ -36,7 +37,7 @@ start_panel = {
             spr(
                 0,                     -- id
                 (scr_w - 6 * 16) // 2, -- x
-                (scr_h - 2 * 16) // 2, -- y
+                (scr_h - 2 * 16) // 2 - (((ticks // 60) % 2) * 4), -- y
                 {
                     scale = 2,
                     sw = 6,
