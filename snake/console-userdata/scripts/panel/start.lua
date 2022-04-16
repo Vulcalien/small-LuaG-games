@@ -11,10 +11,6 @@ start_panel = {
     end,
 
     render = function(self)
-        local color_boost = math.abs(math.sin(ticks / 120))
-
-        clear(math.floor(color_boost * 0x11 + 0x44) << 8)
-
         do -- press START text
             local text = 'Press START';
             local len = string.len(text)
@@ -42,7 +38,7 @@ start_panel = {
                     scale = 2,
                     sw = 6,
                     sh = 2,
-                    col_mod = math.floor(color_boost * 0x33 + 0xcc) << 16
+                    col_mod = 0xee0000
                 }
             )
         end

@@ -16,6 +16,11 @@
 function init()
     ticks = 0
 
+    score = 0
+
+    game_w = 20
+    game_h = 19
+
     settransparent(0xff00ff)
 
     loadscript('player.lua')
@@ -39,5 +44,10 @@ function tick()
 end
 
 function render()
+    local background_color = math.floor(
+        math.abs(math.sin(ticks / 120)) * 0x11 + 0x44
+    ) << 8
+    clear(background_color)
+
     current_panel:render()
 end

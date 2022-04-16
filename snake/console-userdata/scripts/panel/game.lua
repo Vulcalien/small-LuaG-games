@@ -21,5 +21,15 @@ game_panel = {
     render = function(self)
         player:render()
         food:render()
+
+        pix(0, scr_h - 8, 0x000000, { w = scr_w, h = 8 })
+        for i=0,1 do
+            write(
+                'Score: ' .. score,
+                i == 0 and 0x7a7a7a or 0xcccccc,
+                1, scr_h - font_h + 1 - i
+            )
+        end
+
     end
 }

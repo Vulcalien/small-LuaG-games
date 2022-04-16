@@ -9,7 +9,6 @@ credits_panel = {
     end,
 
     render = function(self)
-        clear(0x004400)
         for i=0,1 do
             write(
                 'Copyright 2022 Vulcalien\n' ..

@@ -1,6 +1,6 @@
 player = {
-    head = { x = 0, y = 0 },
-    body = { {x=1,y=0}, {x=2,y=0} },
+    head = { x = 8, y = 9 },
+    body = { { x = 9, y = 9 }, { x = 10, y = 9 } },
 
     dir = -1,
     new_dir = -1,
@@ -29,32 +29,35 @@ player = {
         self.head.x = self.head.x + xm
         self.head.y = self.head.y + ym
 
-        if self.head.x < 0 or self.head.x >= map_w or
-           self.head.y < 0 or self.head.y >= map_h then
+        if self.head.x < 0 or self.head.x >= game_w or
+           self.head.y < 0 or self.head.y >= game_h then
             current_panel = gameover_panel
         end
 
         if self.head.x == food.x and self.head.y == food.y then
             food:spawn()
             self.saturation = self.saturation + 1
+            score = score + 1
         end
     end,
 
     change_dir = function(self, new_dir)
-        if self.dir == new_dir or math.abs(self.dir - new_dir) % 2 ~= 0 then
+        if self.dir == new_dir or
+           math.abs(self.dir - new_dir) % 2 ~= 0 or
+           self.dir == -1 then
             self.new_dir = new_dir
         end
     end,
 
     render = function(self)
         spr(6, self.head.x * 8, self.head.y * 8, {
-            rot = 4 - self.dir,
-            col_mod = 0xffffff -- TODO head color
+            rot = self.dir ~= -1 and 4 - self.dir or 3,
+            col_mod = 0xffbb00
         })
 
         for _,part in ipairs(self.body) do
             spr(7, part.x * 8, part.y * 8, {
-                col_mod = 0xffffff --TODO body color
+                col_mod = 0xffbb55
             })
         end
     end
