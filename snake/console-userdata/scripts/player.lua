@@ -29,9 +29,17 @@ player = {
         self.head.x = self.head.x + xm
         self.head.y = self.head.y + ym
 
-        if self.head.x < 0 or self.head.x >= game_w or
-           self.head.y < 0 or self.head.y >= game_h then
-            current_panel = gameover_panel
+        do -- check for gameover
+            if self.head.x < 0 or self.head.x >= game_w or
+               self.head.y < 0 or self.head.y >= game_h then
+                current_panel = gameover_panel
+            end
+
+            for _,part in ipairs(self.body) do
+                if self.head.x == part.x and self.head.y == part.y then
+                    current_panel = gameover_panel
+                end
+            end
         end
 
         if self.head.x == food.x and self.head.y == food.y then
