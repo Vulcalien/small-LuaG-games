@@ -13,7 +13,8 @@ game_panel = {
             end
         end
 
-        if ticks % 13 == 0 then
+        local move_delay = (key('a') or key('b')) and 7 or 13
+        if ticks % move_delay == 0 then
             player:move()
         end
     end,
