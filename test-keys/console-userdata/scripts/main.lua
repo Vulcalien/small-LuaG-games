@@ -16,8 +16,10 @@ function tick()
     for i,k in ipairs(keys) do
         if key_pressed(k) then
             colors[i] = 0x0000ff
+            print(k .. ' was pressed')
         elseif key_released(k) then
             colors[i] = 0x00ff00
+            print(k .. ' was released')
         elseif key_down(k) then
             colors[i] = 0xff0000
         else
