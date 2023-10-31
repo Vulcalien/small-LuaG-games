@@ -1,0 +1,37 @@
+Jam genre: Roguelike
+Jam Theme: Web
+
+In this game, the player is an antivirus that goes around the *Web* killing
+viruses in many websites.
+
+To make the game roguelike, each website could have different files.
+The file names are randomly choosen from a name pool or something.
+
+Then each file is connected to a few other files.
+Implementation detail: using a tree seems the best way, generated using a
+recursive algorithm.
+
+So we have levels (websites) and rooms (files).
+
+The room view should be like the one in old Pokemon/Legend of Zelda games,
+so that the player has 4 directions.
+
+Inside rooms there should be interesting items, obstacles, a few enemies,
+sometimes a boss (maybe in the last room).
+
+The player should have: an inventory (unlimited or not?), an armor slot,
+weapon slot, shield slot?, boots slot?
+
+Items should be antivirus-related or biological virus related (because funny).
+
+Stats? Maybe increase damage, hp, attack cooldown? and similar by drinking
+"potions" (or the antivirus version of potions, e.g. upgrades, cpu cores,
+ram...)
+
+***
+
+# Ideas for enemies
+- Worm: goes underground and gets out only to attack the player.
+- Trojan: a wooden horse that when exploding releases smaller troops.
+- Spyware: a big eye that fires a laser at the player.
+- Simple virus: attacks the player, then retreats to reproduce.
